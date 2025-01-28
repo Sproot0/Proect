@@ -33,16 +33,14 @@
             // 
             // button1
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.AutoSize = true;
-            this.button1.Location = new System.Drawing.Point(454, 519);
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
+            this.button1.Location = new System.Drawing.Point(628, 528); // Начальная позиция
             this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(475, 29);
+            this.button1.Size = new System.Drawing.Size(100, 50); // Начальные размеры кнопки
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.SizeChanged += new System.EventHandler(this.Form1_Load);
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
@@ -50,18 +48,16 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.AutoSize = true;
             this.BackgroundImage = global::Proect.Properties.Resources.Фон;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(955, 578);
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch; // Фон растягивается
+            this.ClientSize = new System.Drawing.Size(800, 600); // Стартовые размеры формы
             this.Controls.Add(this.button1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Resize += new System.EventHandler(this.Form1_Resize); // Обработчик изменения размеров формы
             this.ResumeLayout(false);
-            this.PerformLayout();
-
         }
 
         #endregion
@@ -69,4 +65,3 @@
         private System.Windows.Forms.Button button1;
     }
 }
-
