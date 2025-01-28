@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Proect
@@ -16,7 +13,18 @@ namespace Proect
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            Application.ThreadException += (sender, args) =>
+            {
+                MessageBox.Show($"Произошла ошибка: {args.Exception.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            };
+
+            using (var mainForm = new Form1())
+            {
+                Application.Run(mainForm);
+            }
+
+            Application.Exit();
         }
     }
 }
